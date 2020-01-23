@@ -23,20 +23,13 @@ try {
   console.error(e);
 }
 
-// Nightmare actions
-
 // Build modules
-const nightmare = Nightmare(nightmareConfig);
-
-nightmare.on('login', (event, webContents, request, authInfo, callback) => {
-      console.log('login event')
-      event.preventDefault()
-      callback('client', 'preview')
-    })
-
 
 const sd = require('./modules/sandstorm.module.js');
-const drupal8 = new drupal8module(config, nightmare);
+
+sd.getConfig(env);
+const nightmare = Nightmare(sd.nightmareConfig);
+const drupal8 = new drupal8module(sd.config, nightmare);
 /*******************************************************************************
 * LET'S GET STARTED
 *******************************************************************************/
@@ -57,7 +50,7 @@ sd.consoleHeader(headerText);
 // drupal8.getSchema('page.content-type');
 
 // drupal8.writeSchema();
-drupal8.addNodeInteractive('page');
+// drupal8.addNodeInteractive('page');
 
 // End the instance
 drupal8.end(sd.bar, 'Testing complete');

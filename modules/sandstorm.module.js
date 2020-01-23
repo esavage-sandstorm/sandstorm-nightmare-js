@@ -12,14 +12,21 @@ const sandstorm = function() {
   module.bar = symbol.padStart(terminal.width - 2, symbol);
 
   module.getConfig = function(env){
-    module.config = {};
-    module.nightmareConfig = {};
-    if (settings = module.getYaml('./.env')){
-      Object.assign(module.nightmareConfig, settings.nightmare);
-      Object.assign(module.config, settings.global);
-      if (env){
-        Object.assign(module.config, settings[env]);
+   const envFile = './.env';
+    try {
+      if (fs.existsSync(envFile)) {
+        module.config = {};
+        module.nightmareConfig = {};
+        if (settings = module.getYaml(envFile)){
+          Object.assign(module.nightmareConfig, settings.nightmare);
+          Object.assign(module.config, settings.global);
+          if (env){
+            Object.assign(module.config, settings[env]);
+          }
+        }
       }
+    } catch(err) {
+      console.error(err)
     }
   }
   module.writeYaml = function(data, filename) {

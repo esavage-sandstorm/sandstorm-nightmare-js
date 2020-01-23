@@ -45,18 +45,26 @@ A central module for common functions, like reading / writing files, printing da
 
 ###### sandstorm.getConfig(env)
 Read the .env file (see above) and store values within the module.
+
 @param **env** - a string to correspond with the environments in the .env file
+
 @return void - Config values will be assigned to:
+
 - sandstorm.nightmareConfig
 - sandstorm.config
 
 ###### sandstorm.writeYaml(data, path)
 Write out the provided data as YAML to the path provided.
+
 @param data {object} The data to be written.
+
 @param path {string} the path to write it to.
+
 @return void
 
 ###### sandstorm.getYaml(path)
 Read YAML data from path provided.
+
 @param path {string} the path to be read.
+
 @return {mixed} the data from the provided YAML file

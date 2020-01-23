@@ -1,0 +1,26 @@
+{
+  "name": "sandstorm-nightmare-js",
+  "version": "1.0.0",
+  "description": "nightmare JS tools for automated testing",
+  "main": "index.js",
+  "scripts": {
+    "local": "env=local mocha ./test.js",
+    "nicb": "env=nicb mocha ./test.js"
+  },
+  "author": "Sandstorm Design | Eric Savage",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "chai": "^4.2.0",
+    "curl": "^0.1.4",
+    "fs": "0.0.1-security",
+    "js-yaml": "^3.13.1",
+    "mocha": "^4.0.1",
+    "mocha-generators": "^2.0.0",
+    "nightmare": "^3.0.2",
+    "opn": "^6.0.0",
+    "prompt-sync": "^4.2.0",
+    "ssh2-promise": "^0.1.5",
+    "window-size": "^1.1.1"
+  }
+}

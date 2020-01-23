@@ -4,8 +4,8 @@
   "description": "nightmare JS tools for automated testing",
   "main": "index.js",
   "scripts": {
-    "local": "env=local mocha ./test.js",
-    "nicb": "env=nicb mocha ./test.js"
+    "local": "env=local mocha ./index.js",
+    "nicb": "env=nicb mocha ./index.js"
   },
   "author": "Sandstorm Design | Eric Savage",
   "license": "ISC",

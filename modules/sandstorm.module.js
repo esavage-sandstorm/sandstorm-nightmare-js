@@ -11,6 +11,7 @@ const sandstorm = function() {
   
   module.bar = symbol.padStart(terminal.width - 2, symbol);
 
+  
   module.getConfig = function(env){
    const envFile = './.env';
     try {
@@ -29,13 +30,14 @@ const sandstorm = function() {
       console.error(err)
     }
   }
-  module.writeYaml = function(data, filename) {
+
+  module.writeYaml = function(data, path) {
     let yamlStr = yaml.safeDump(data);
-    fs.writeFileSync(filename, yamlStr, 'utf8');
+    fs.writeFileSync(path, yamlStr, 'utf8');
   }
-  module.getYaml = function(file){
+  module.getYaml = function(path){
     try {
-      const data = yaml.safeLoad(fs.readFileSync(file, 'utf8'));
+      const data = yaml.safeLoad(fs.readFileSync(path, 'utf8'));
       return data;
     } catch(e) {
       console.error(e);

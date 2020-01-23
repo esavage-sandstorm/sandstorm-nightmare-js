@@ -9,18 +9,18 @@ Goals:
 ## The .env file
 A project should have a .env file which will contain (at minimum) the following information. This file will not be tracked by git for security's sake.:
 - nightmare options
-- - Show: display the electron browser when running tests
-- - switches
-- - - ignore-certificate-errors: if true, Electron will ignore the errors caused by self-signed SSL certificates.
-- - window: TBD
+	- Show: display the electron browser when running tests
+	- switches
+		- ignore-certificate-errors: if true, Electron will ignore the errors caused by self-signed SSL certificates.
+	- window: TBD
 - Global Options
-- - name: A friendly Display Name for the project.
-- - username: the CMS username for Nightmare to use when logging in.
-- - password: the password for the above user.
-- - login: the path to the login page.
-- Environments
+	- name: A friendly Display Name for the project.
+	- username: the CMS username for Nightmare to use when logging in.
+	- password: the password for the above user.
+	- login: the path to the login page.
+- Environments:
 Any number of environments. These values will supercede the global settings. Minimum settings:
-- - url: ie domain.local
+	- url: ie domain.local
 
 ### Example .env
 	nightmare:
